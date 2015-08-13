@@ -17,28 +17,28 @@ public class ChangeMakerAppTest {
   @Test
   public void changeMakerApp_changeIs25OrMore_ReturnQuarters(){
     ChangeMakerApp testChangeMaker = new ChangeMakerApp();
-    Integer[] fakeResult = {3,1,0,0};
+    String fakeResult = "3 quarters, 1 dimes, 0 nickels, and 0 pennies";
     assertEquals(fakeResult, testChangeMaker.makeChange(85));
   }
 
   @Test
   public void changeMakerApp_changeAfterQuartersIs10_ReturnDimes(){
     ChangeMakerApp testChangeMaker = new ChangeMakerApp();
-    Integer[] fakeResult = {1,1,0,0};
+    String fakeResult = "1 quarters, 1 dimes, 0 nickels, and 0 pennies";
     assertEquals(fakeResult, testChangeMaker.makeChange(35));
   }
 
   @Test
   public void changeMakerApp_changeAfterDimesIs5_ReturnNickels(){
     ChangeMakerApp testChangeMaker = new ChangeMakerApp();
-    Integer[] fakeResult = {1,1,1,0};
+    String fakeResult = "1 quarters, 1 dimes, 1 nickels, and 0 pennies";
     assertEquals(fakeResult, testChangeMaker.makeChange(40));
   }
 
   @Test
   public void changeMakerApp_changeAferDimesIs1_returnPennies(){
     ChangeMakerApp testChangeMaker = new ChangeMakerApp();
-    Integer[] fakeResult = {1, 0, 0, 1};
+    String fakeResult = "1 quarters, 0 dimes, 0 nickels, and 1 pennies";
     assertEquals(fakeResult, testChangeMaker.makeChange(26));
   }
 

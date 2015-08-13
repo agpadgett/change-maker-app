@@ -22,7 +22,6 @@ public class ChangeMakerApp {
 
       String howMuchChangeString = request.queryParams("userinput");
       Integer howMuchChange = Integer.parseInt(howMuchChangeString);
-    //  Integer[] resultOfCalculations = makeChange(howMuchChange);
       String resultOfCalculations = makeChange(howMuchChange);
 
       model.put("result", resultOfCalculations);
@@ -40,8 +39,11 @@ public class ChangeMakerApp {
     Integer dimes = 0;
     Integer nic = 0;
     Integer pennies = 0;
-    //Integer[] amountOfEachCoin = {quarters, dimes, nic, pennies};
-    String tellThemTheirChange = String.format("Change is %d quarters, %d dimes, %d nickels, and %d pennies", quarters, dimes, nic, pennies);
+
+    //show different strings depending on if coins are plural
+
+    String tellThemTheirChange = String.format("%d quarters, %d " +
+          "dimes, %d nickels, and %d pennies", quarters, dimes, nic, pennies);
 
 
 
@@ -59,23 +61,12 @@ public class ChangeMakerApp {
         } else {
           centsOwed -=1;
           pennies ++;
+        }
       }
-      }
 
+    String tellThemTheirChange2 = String.format("%d quarters, %d " +
+          "dimes, %d nickels, and %d pennies", quarters, dimes, nic, pennies);
+    return tellThemTheirChange2;
 
-        // amountOfEachCoin[0] = quarters;
-        // amountOfEachCoin[1] = dimes;
-        // amountOfEachCoin[2] = nic;
-        // amountOfEachCoin[3] = pennies;
-
-  //  }
-String tellThemTheirChange2 = String.format("Change is %d quarters, %d dimes, %d nickels, and %d pennies", quarters, dimes, nic, pennies);
-return tellThemTheirChange2;
-
-
-    //  amountOfEachCoin;
   }
-
-
-
 }
