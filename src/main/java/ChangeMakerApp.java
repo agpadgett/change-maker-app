@@ -42,11 +42,6 @@ public class ChangeMakerApp {
 
     //show different strings depending on if coins are plural
 
-    String tellThemTheirChange = String.format("%d quarters, %d " +
-          "dimes, %d nickels, and %d pennies", quarters, dimes, nic, pennies);
-
-
-
       while (centsOwed >0){
 
       if(centsOwed >= 25){
